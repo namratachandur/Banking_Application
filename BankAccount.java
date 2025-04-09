@@ -28,16 +28,23 @@ public class BankAccount
         return this.pin == pin;
     }
 
-    public void deposit(double amount)
+    public void deposit(double amount, int pin)
     {
-        if (amount > 0) 
+        if (this.pin == pin)
         {
-            balance += amount;
-            System.out.printf("Deposited: %.2f\nCurrent balance: %.2f\n", amount, balance);
-        } 
-        else 
+            if (amount > 0) 
+            {
+                balance += amount;
+                System.out.printf("Deposited: %.2f\nCurrent balance: %.2f\n", amount, balance);
+            } 
+            else 
+            {
+                System.out.println("Deposit amount must be positive.");
+            }
+        }
+        else
         {
-            System.out.println("Deposit amount must be positive.");
+            System.out.println("Incorrect PIN code.");
         }
     }
 
