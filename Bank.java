@@ -54,17 +54,31 @@ public class Bank
                 {
                     System.out.print("Enter PIN code: ");
                     int pin = input.nextInt();
-                    System.out.print("Enter deposit amount: ");
-                    double depositAmount = input.nextDouble();
-                    account.deposit(depositAmount, pin);
+                    if (account.validatePin(pin)) 
+                    {
+                        System.out.print("Enter deposit amount: ");
+                        double depositAmount = input.nextDouble();
+                        account.deposit(depositAmount, pin);
+                    }
+                    else 
+                    {
+                        System.out.println("Incorrect PIN code.");
+                    }
                 }
                 case 3 -> 
                 {
                     System.out.print("Enter PIN code: ");
                     int pin = input.nextInt();
-                    System.out.print("Enter withdrawal amount: ");
-                    double withdrawAmount = input.nextDouble();
-                    account.withdraw(withdrawAmount, pin);
+                    if (account.validatePin(pin)) 
+                    {
+                        System.out.print("Enter withdrawal amount: ");
+                        double withdrawalAmount = input.nextDouble();
+                        account.withdraw(withdrawalAmount, pin);
+                    }
+                    else 
+                    {
+                        System.out.println("Incorrect PIN code.");
+                    }
                 }
                 case 4 -> 
                 {
@@ -78,10 +92,19 @@ public class Bank
             {
                 System.out.print("\nWould you like to perform another transaction? (1 for Yes, 0 for No): ");
                 int continueChoice = input.nextInt();
-                newTransaction = continueChoice == 1;
-                if (!newTransaction) 
+                if (continueChoice != 0 && continueChoice != 1) 
                 {
+                    newTransaction = false;
+                    System.out.println("Invalid choice. Exiting transaction.");
+                } 
+                else if (continueChoice == 0) 
+                {
+                    newTransaction = false;
                     System.out.println("Thank you for using the Bank Management System. Goodbye!");
+                } 
+                else 
+                {
+                    newTransaction = true;
                 }
             }
         }
