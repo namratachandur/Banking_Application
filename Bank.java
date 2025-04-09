@@ -52,16 +52,18 @@ public class Bank
                 }
                 case 2 -> 
                 {
+                    System.out.print("Enter PIN code: ");
+                    int pin = input.nextInt();
                     System.out.print("Enter deposit amount: ");
                     double depositAmount = input.nextDouble();
-                    account.deposit(depositAmount);
+                    account.deposit(depositAmount, pin);
                 }
                 case 3 -> 
                 {
-                    System.out.print("Enter withdrawal amount: ");
-                    double withdrawAmount = input.nextDouble();
                     System.out.print("Enter PIN code: ");
                     int pin = input.nextInt();
+                    System.out.print("Enter withdrawal amount: ");
+                    double withdrawAmount = input.nextDouble();
                     account.withdraw(withdrawAmount, pin);
                 }
                 case 4 -> 
