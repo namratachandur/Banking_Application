@@ -10,12 +10,12 @@ public class Main
 
         System.out.println("Welcome to the Bank Management System!");
 
-        boolean validLogin = false; // Flag to check if login is valid
+        boolean validLogin = false; // Boolean variable to check if login is valid
         BankAccount currentAccount = null; 
 
         while (!validLogin) 
         {
-            // Prompt user for login details
+            // Prompts user for login details
             System.out.println("\nPlease log in to your account.");
             
             System.out.println("Enter your account number: ");
@@ -34,7 +34,7 @@ public class Main
             } 
             else 
             {
-                // If login fails, prompt user to try again
+                // If login fails, prompts user to try again
                 System.out.println("Invalid account number or PIN. Please try again.");
             }
         }
