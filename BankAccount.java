@@ -1,7 +1,7 @@
 public class BankAccount
 {
     // Class to represent a bank account with attributes and methods for transactions
-    private int account_number;
+    private int account_number; 
     private int pin;
     private String account_holder_name;
     private double balance;
@@ -29,7 +29,7 @@ public class BankAccount
 
     public boolean validatePin(int pin)
     {
-        // Method to validate the PIN 
+        // Method to validate the PIN code
         return this.pin == pin;
     }
 
