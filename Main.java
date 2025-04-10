@@ -10,7 +10,7 @@ public class Main
 
         System.out.println("Welcome to the Bank Management System!");
 
-        boolean validLogin = false; // Checks if login is valid
+        boolean validLogin = false; // Boolean variable to check if login is valid
         BankAccount currentAccount = null;
 
         while (!validLogin) 
