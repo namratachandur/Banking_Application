@@ -16,6 +16,8 @@ public class Main
         while (!validLogin) 
         {
             // Prompts user for login details
+            System.out.println("\nPlease log in to your account.");
+            
             System.out.print("Enter your account number: ");
             int accountNumber = input.nextInt();
 
@@ -26,7 +28,6 @@ public class Main
 
             if (currentAccount != null) 
             {
-                // Invalid login attempt handled here
                 validLogin = true;
                 System.out.printf("\nWelcome, %s!\n", currentAccount.getAccountHolderName());
                 bank.performTransaction(currentAccount); // Perform transactions for the logged-in account
