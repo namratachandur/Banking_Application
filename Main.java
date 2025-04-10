@@ -2,18 +2,20 @@ import java.util.Scanner;
 
 public class Main 
 {
+    // Main method to run the Bank Management System
     public static void main(String[] args) 
     {
-        Scanner input = new Scanner(System.in);
-        Bank bank = new Bank();
+        Scanner input = new Scanner(System.in); // Scanner for user input
+        Bank bank = new Bank(); // Creates a new Bank object
 
         System.out.println("Welcome to the Bank Management System!");
 
-        boolean validLogin = false;
+        boolean validLogin = false; // Checks if login is valid
         BankAccount currentAccount = null;
 
         while (!validLogin) 
         {
+            // Prompts user for login details
             System.out.print("Enter your account number: ");
             int accountNumber = input.nextInt();
 
@@ -24,12 +26,14 @@ public class Main
 
             if (currentAccount != null) 
             {
+                // Invalid login attempt handled here
                 validLogin = true;
                 System.out.printf("\nWelcome, %s!\n", currentAccount.getAccountHolderName());
-                bank.performTransaction(currentAccount);
+                bank.performTransaction(currentAccount); // Perform transactions for the logged-in account
             } 
             else 
             {
+                // If login fails, prompts user to try again
                 System.out.println("Invalid account number or PIN. Please try again.");
             }
         }
