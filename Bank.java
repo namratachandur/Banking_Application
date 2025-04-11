@@ -6,7 +6,7 @@ public class Bank
     /* Class to manage the bank accounts and transactions
        Contains methods to find an account, perform transactions, and manage user input */
     private ArrayList<BankAccount> accounts = new ArrayList<>(); // List to store the bank accounts
-    private Scanner input = new Scanner(System.in); // Scanner for user input
+    Scanner input = new Scanner(System.in); // Scanner for user input
 
     public Bank()
     {
@@ -119,6 +119,6 @@ public class Bank
                 }
             }
         }
-        
+        input.close(); // Close the scanner
     }
 }
