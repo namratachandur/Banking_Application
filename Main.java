@@ -29,7 +29,7 @@ public class Main
             if (currentAccount != null) 
             {
                 validLogin = true;
-                System.out.printf("\nWelcome, %s!\n", currentAccount.getAccountHolderName());
+                System.out.println("\nWelcome, " + currentAccount.getAccountHolderName());
                 bank.performTransaction(currentAccount); // Perform transactions for the logged-in account
             } 
             else 
