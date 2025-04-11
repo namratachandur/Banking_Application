@@ -58,7 +58,7 @@ public class BankAccount
     public void withdraw(double amount, int pin)
     {
         /* Method to withdraw money from the active account
-            Checks if the provided PIN is correct and if the amount is positive */
+            Checks if the provided PIN is correct and if the amount is valid */
         if (this.pin == pin) 
         {
             if (amount > 0 ) 
