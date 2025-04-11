@@ -38,6 +38,6 @@ public class Main
                 System.out.println("Invalid account number or PIN. Please try again.");
             }
         }
-        input.close();
+        input.close(); // Close the scanner
     }
 }
